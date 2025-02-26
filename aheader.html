@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Landing Page</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .cta{
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            align-items: center;
+            color: white;
+        }
+        .cta a{
+            margin: 0;
+            font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
+            /* font-size: 500px; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 60px    ;
+            font-weight: 600;   
+        }
+        .subText{
+            /* display: flex;
+            justify-content: center;
+            align-items: center;*/
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.929);
+            font-size: 18px; 
+        }
+        @media (max-width: 750px) {
+        .subtext {
+            font-size: 16px; /* Slightly smaller font size for tablets and smaller screens */
+            margin: 0 1rem 0 1rem;
+        }
+        }
+        @media (max-width: 480px) {
+        .subtext {
+            font-size: 14px; /* Smaller font size for mobile devices */
+        }
+        }
+        .heading nav{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10rem;
+        }
+        .heading nav a{
+            text-decoration: none;
+            color: white;
+            
+            margin: 10px 20px 10px 40px;
+        }
+        ul li{
+            list-style-type: none;  
+            display: inline-block;
+        }
+        ul{
+            margin-top: 30px;
+        }
+        .logo{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .btnsc{
+            display: flex;
+            gap: 20px;   
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn1{
+            margin-top: 20px;
+            padding: 15px 30px;         
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;  
+            color: white;
+            background-color: #ececec21;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .sidebar{
+            position:fixed;
+            top:0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            background-color: rgba(212, 212, 212, 0.161);
+            box-shadow: -10px 0 10px rgba(0, 0, 0,0.1);
+            backdrop-filter: blur(10px);
+            display:none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .sidebar li{
+            width: 100%;
+            margin-top: 4px;
+            padding: 15px;
+        }
+        .sidebar a{
+            width: 100%;
+            backdrop-filter:unset;
+
+        }
+        .sidebar li:hover{
+            background-color: #51b2e7;
+        }
+        .btn2{
+            margin-top: 20px;
+            padding: 15px 30px;         
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;  
+            color: white;
+            background-color: #ececec21;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btnsc .btn1:hover{
+            background-color: #51b2e7;
+        }
+        .btnsc .btn2:hover{
+            background-color: #51e797;
+        }
+        .menu-btn{
+            display: none;
+        }
+        @media(max-width:740px){
+            .hideonMobile{
+                display: none;
+            }
+            .menu-btn{
+                display: block;
+            }
+        }
+        @media(max-width:400px){
+            .sidebar{
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>                                          
+    <div class="header finisher-header" style="width: 100%; height: 100vh;">
+        <div class="heading">
+            <nav>
+                <ul>
+                    <a class="logo" href="/aheader.html">GAMEFLASH</a>
+                </ul>
+                <ul class="sidebar">
+                    <li class="menu-btn" onclick=hide() ><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="#">GET STARTED</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#">ABOUT US</a></li>
+                </ul>
+                <ul >
+                    <li class="hideonMobile"><a href="#">GET STARTED</a></li>
+                    <li class="hideonMobile"><a href="#">CONTACT</a></li>
+                    <li class="hideonMobile"><a href="#">ABOUT US</a></li>
+                    <li class="menu-btn" onclick=show() ><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="26px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    <div class="cta">
+        <a>Get Started Today!</a>
+    </div>
+    <div class="subText">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="btnsc">
+        <button class="btn1">LOGIN</button>
+        <button class="btn2">SIGN UP</button>
+    </div>
+    </div>  
+    <script>
+        function show(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function hide(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+</body>
+<script src="finisher-header.es5.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    new FinisherHeader({
+      "count": 10,
+      "size": {
+        "min": 2,
+        "max": 40,
+        "pulse": 0
+      },
+      "speed": {
+        "x": {
+          "min": 0,
+          "max": 0.8
+        },
+        "y": {
+          "min": 0,
+          "max": 0.2
+        }
+      },
+      "colors": {
+        "background": "#15182e",
+        "particles": [
+          "#ff926b",
+          "#87ddfe",
+          "#acaaff",
+          "#1bffc2",
+          "#f9a5fe"
+        ]
+      },
+      "blending": "screen",
+      "opacity": {
+        "center": 1,
+        "edge": 1
+      },
+      "skew": 0,
+      "shapes": [
+        "c",
+        "s",
+        "t"
+      ]
+    });
+    </script>
+</html>
